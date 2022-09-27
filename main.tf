@@ -4,7 +4,7 @@ locals {
 }
 
 resource "azurerm_log_analytics_workspace" "workspace" {
-  name = var.name_override != "" ? var.override_name : local.standard_name
+  name = var.override_name != "" ? var.override_name : local.standard_name
 
   location            = var.resource_group.location
   resource_group_name = var.resource_group.name
