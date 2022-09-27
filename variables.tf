@@ -37,19 +37,19 @@ variable "resource_group" {
 # }
 
 variable "sku" {
-  description = "(Optional) Specifies the SKU of the Log Analytics Workspace. Possible values are Free, PerNode, Premium, Standard, Standalone, Unlimited, CapacityReservation, and PerGB2018 (new SKU as of 2018-04-03). Defaults to PerGB2018."
+  description = "(Optional) Specifies the SKU of the Log Analytics Workspace. Possible values are `Free`, `PerNode`, `Premium`, `Standard`, `Standalone`, `Unlimited`, `CapacityReservation`, and `PerGB2018` (new SKU as of `2018-04-03`). Defaults to `PerGB2018`. Note that the `Free` SKU has a default `daily_quota_gb` value of `0.5 `(GB)."
   type        = string
   default     = "PerGB2018"
 }
 
 variable "retention_in_days" {
-  description = "(Optional) The workspace data retention in days. Possible values are either 7 (Free Tier only) or range between 30 and 730."
+  description = "(Optional) The workspace data retention in days. Possible values are either `7` (Free Tier only) or range between `30` and `730`."
   type        = number
   default     = 30
 }
 
 variable "daily_quota_gb" {
-  description = "(Optional) The workspace daily quota for ingestion in GB. Defaults to -1 (unlimited) if omitted."
+  description = "(Optional) The workspace daily quota for ingestion in GB. Defaults to `-1` (unlimited) if omitted."
   type        = number
   default     = -1
 }
@@ -61,19 +61,19 @@ variable "cmk_for_query_forced" {
 }
 
 variable "internet_ingestion_enabled" {
-  description = "(Optional) Should the Log Analytics Workspace support ingestion over the Public Internet? Defaults to true."
+  description = "(Optional) Should the Log Analytics Workspace support ingestion over the Public Internet? Defaults to `true`."
   type        = bool
   default     = true
 }
 
 variable "internet_query_enabled" {
-  description = "(Optional) Should the Log Analytics Workspace support querying over the Public Internet? Defaults to true."
+  description = "(Optional) Should the Log Analytics Workspace support querying over the Public Internet? Defaults to `true`."
   type        = bool
   default     = true
 }
 
 variable "reservation_capacity_in_gb_per_day" {
-  description = "(Optional) The capacity reservation level in GB for this workspace. Must be in increments of 100 between 100 and 5000. Note: reservation_capacity_in_gb_per_day can only be used when the sku is set to CapacityReservation."
+  description = "(Optional) The capacity reservation level in GB for this workspace. Must be in increments of `100` between `100` and `5000`. Note: `reservation_capacity_in_gb_per_day` can only be used when the sku is set to `CapacityReservation`."
   type        = number
   default     = null
 }

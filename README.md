@@ -1,4 +1,4 @@
-# azurerm_log_analytics_workspace
+# [azurerm_log_analytics_workspace](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/log_analytics_workspace)
 
 Manages a Log Analytics (formally Operational Insights) Workspace.
 
