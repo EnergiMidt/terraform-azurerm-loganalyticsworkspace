@@ -1,6 +1,6 @@
 locals {
-  standard_name = var.log_analytics_workspace_name
-  # standard_name = "${var.log_analytics_workspace_name}-${var.environment}"
+  standard_name = var.name
+  # standard_name = "${var.name}-${var.environment}"
 }
 
 resource "azurerm_log_analytics_workspace" "workspace" {
