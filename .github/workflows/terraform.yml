@@ -22,12 +22,12 @@ on:
 
 
 jobs:
-  generate-terraform-documentation:
-    name: 'Generate Terraform Documentation'
+  terraform:
+    name: 'Terraform'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: 'Generate Terraform Documentation'
+      - name: 'Inject Terraform Documentation'
         uses: terraform-docs/gh-actions@v1
         with:
           working-dir: .
