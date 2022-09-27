@@ -1,0 +1,36 @@
+---
+name: Terraform
+
+on:
+  push:
+    branches:
+      - 'main'
+      - 'docs/**'
+      - 'feature/**'
+      - 'fix/**'
+      - 'wip/**'
+    paths-ignore:
+      - '**/**.md'
+  pull_request:
+    branches:
+      - 'docs/**'
+      - 'feature/**'
+      - 'fix/**'
+      - 'wip/**'
+    paths-ignore:
+      - '**/**.md'
+
+
+jobs:
+  generate-terraform-documentation:
+    name: 'Generate Terraform Documentation'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: 'Generate Terraform Documentation'
+        uses: terraform-docs/gh-actions@v1
+        with:
+          working-dir: .
+          output-file: README.md
+          output-method: inject
+          git-push: "true"
