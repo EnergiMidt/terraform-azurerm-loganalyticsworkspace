@@ -7,9 +7,11 @@ Manages a Log Analytics (formally Operational Insights) Workspace.
 - Format and validate terraform code before commit.
 
 ```shell
-terraform fmt -recursive .
-terraform fmt -check
-terraform validate .
+terraform init -upgrade \
+    && terraform init -reconfigure -upgrade \
+    && terraform fmt -recursive . \
+    && terraform fmt -check \
+    && terraform validate .
 ```
 
 - Always fetch latest changes from upstream and rebase from it. Terraform documentation will always be updated with GitHub Actions. See also [.github/workflows/terraform.yml](.github/workflows/terraform.yml) GitHub Actions workflow.
