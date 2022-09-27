@@ -1,3 +1,4 @@
 output "azurerm_log_analytics_workspace" {
-  value = azurerm_log_analytics_workspace.workspace
+  description = "The Azure Resource of Log Analytics Workspace."
+  value       = azurerm_log_analytics_workspace.workspace
 }
