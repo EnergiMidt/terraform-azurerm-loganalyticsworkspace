@@ -64,5 +64,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_azurerm_log_analytics_workspace"></a> [azurerm\_log\_analytics\_workspace](#output\_azurerm\_log\_analytics\_workspace) | The Azure Resource of Log Analytics Workspace. |
+| <a name="output_azurerm_log_analytics_workspace"></a> [azurerm\_log\_analytics\_workspace](#output\_azurerm\_log\_analytics\_workspace) | The Log Analytics Workspace resource. |
 <!-- END_TF_DOCS -->
