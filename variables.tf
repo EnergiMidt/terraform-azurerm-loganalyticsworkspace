@@ -24,6 +24,7 @@ variable "override_name" {
 
 variable "resource_group" {
   description = "(Required) The resource group in which the Log Analytics workspace is created. Changing this forces a new resource to be created."
+  type        = any
 }
 
 # variable "resource_group_name" {
@@ -38,48 +39,48 @@ variable "resource_group" {
 
 variable "sku" {
   description = "(Optional) Specifies the SKU of the Log Analytics Workspace. Possible values are `Free`, `PerNode`, `Premium`, `Standard`, `Standalone`, `Unlimited`, `CapacityReservation`, and `PerGB2018` (new SKU as of `2018-04-03`). Defaults to `PerGB2018`. Note that the `Free` SKU has a default `daily_quota_gb` value of `0.5 `(GB)."
-  type        = string
   default     = "PerGB2018"
+  type        = string
 }
 
 variable "retention_in_days" {
   description = "(Optional) The workspace data retention in days. Possible values are either `7` (Free Tier only) or range between `30` and `730`."
-  type        = number
   default     = 30
+  type        = number
 }
 
 variable "daily_quota_gb" {
   description = "(Optional) The workspace daily quota for ingestion in GB. Defaults to `-1` (unlimited) if omitted."
-  type        = number
   default     = -1
+  type        = number
 }
 
 variable "cmk_for_query_forced" {
   description = "(Optional) Is Customer Managed Storage mandatory for query management?"
-  type        = bool
   default     = false
+  type        = bool
 }
 
 variable "internet_ingestion_enabled" {
   description = "(Optional) Should the Log Analytics Workspace support ingestion over the Public Internet? Defaults to `true`."
-  type        = bool
   default     = true
+  type        = bool
 }
 
 variable "internet_query_enabled" {
   description = "(Optional) Should the Log Analytics Workspace support querying over the Public Internet? Defaults to `true`."
-  type        = bool
   default     = true
+  type        = bool
 }
 
 variable "reservation_capacity_in_gb_per_day" {
   description = "(Optional) The capacity reservation level in GB for this workspace. Must be in increments of `100` between `100` and `5000`. Note: `reservation_capacity_in_gb_per_day` can only be used when the sku is set to `CapacityReservation`."
-  type        = number
   default     = null
+  type        = number
 }
 
 variable "tags" {
   description = "(Optional) A mapping of tags to assign to the resource."
-  type        = map(string)
   default     = {}
+  type        = map(string)
 }
