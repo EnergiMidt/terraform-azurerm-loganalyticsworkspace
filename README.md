@@ -1,4 +1,4 @@
-# [azurerm_log_analytics_workspace](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/log_analytics_workspace)
+# [azurerm_log_analytics_workspace][1]
 
 Manages a Log Analytics (formally Operational Insights) Workspace.
 
@@ -68,3 +68,5 @@ No modules.
 |------|-------------|
 | <a name="output_azurerm_log_analytics_workspace"></a> [azurerm\_log\_analytics\_workspace](#output\_azurerm\_log\_analytics\_workspace) | The Log Analytics Workspace resource. |
 <!-- END_TF_DOCS -->
+
+[1]: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/log_analytics_workspace
