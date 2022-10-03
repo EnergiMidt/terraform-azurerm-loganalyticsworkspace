@@ -66,7 +66,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_azurerm_log_analytics_workspace"></a> [azurerm\_log\_analytics\_workspace](#output\_azurerm\_log\_analytics\_workspace) | The Log Analytics Workspace resource. |
+| <a name="output_azurerm_log_analytics_workspace"></a> [azurerm\_log\_analytics\_workspace](#output\_azurerm\_log\_analytics\_workspace) | The Azure Log Analytics Workspace resource. |
 <!-- END_TF_DOCS -->
 
 [1]: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/log_analytics_workspace
