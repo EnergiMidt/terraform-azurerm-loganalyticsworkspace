@@ -1,15 +1,14 @@
 locals {
-  standard_name = var.name
-  # standard_name = "${var.name}-${var.environment}"
+  name     = var.override_name == null ? "${var.system_name}-${lower(var.environment)}-log" : var.override_name
+  location = var.override_location == null ? var.resource_group.location : var.override_location
 }
 
 resource "azurerm_log_analytics_workspace" "workspace" {
-  name = var.override_name != "" ? var.override_name : local.standard_name
-
-  location            = var.resource_group.location
+  name                = local.name
+  location            = local.location
   resource_group_name = var.resource_group.name
-  sku                 = var.sku
 
+  sku                                = var.sku
   retention_in_days                  = var.retention_in_days
   daily_quota_gb                     = var.daily_quota_gb
   cmk_for_query_forced               = var.cmk_for_query_forced

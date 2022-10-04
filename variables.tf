@@ -7,33 +7,47 @@ variable "environment" {
       "test",
       "prod",
     ], var.environment)
-    error_message = "Valid options are dev, test, and prod."
+    error_message = "Possible values are dev, test, and prod."
   }
 }
 
-variable "name" {
-  description = "(Required) Specifies the name of the Log Analytics Workspace. Workspace name should include 4-63 letters, digits or '-'. The '-' shouldn't be the first or the last symbol. Changing this forces a new resource to be created."
+# This `name` variable is replaced by the use of `system_name` and `environment` variables.
+# variable "name" {
+#   description = "(Required) The name which should be used for this resource. Changing this forces a new resource to be created."
+#   type        = string
+# }
+
+variable "system_name" {
+  description = "(Required) The systen name which should be used for this resource. Changing this forces a new resource to be created."
   type        = string
 }
 
 variable "override_name" {
   description = "(Optional) Override the name of the resource. Under normal circumstances, it should not be used."
+  default     = null
   type        = string
-  default     = ""
+}
+
+variable "override_location" {
+  description = "(Optional) Override the location of the resource. Under normal circumstances, it should not be used."
+  default     = null
+  type        = string
 }
 
 variable "resource_group" {
-  description = "(Required) The resource group in which the Log Analytics workspace is created. Changing this forces a new resource to be created."
+  description = "(Required) The resource group in which to create the resource."
   type        = any
 }
 
+# This `resource_group_name` variable is replaced by the use of `resource_group` variable.
 # variable "resource_group_name" {
-#   description = "(Required) The name of the resource group in which the Log Analytics workspace is created. Changing this forces a new resource to be created."
+#   description = "(Required) The name of the resource group where the resource should exist. Changing this forces a new resource to be created."
 #   type        = string
 # }
 
+# This `location` variable is replaced by the use of `resource_group` variable.
 # variable "location" {
-#   description = "(Required) Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+#   description = "(Required) The location where the resource should exist. Changing this forces a new resource to be created."
 #   type        = string
 # }
 
