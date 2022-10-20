@@ -55,6 +55,10 @@ variable "sku" {
   description = "(Optional) Specifies the SKU of the Log Analytics Workspace. Possible values are `Free`, `PerNode`, `Premium`, `Standard`, `Standalone`, `Unlimited`, `CapacityReservation`, and `PerGB2018` (new SKU as of `2018-04-03`). Defaults to `PerGB2018`. Note that the `Free` SKU has a default `daily_quota_gb` value of `0.5 `(GB)."
   default     = "PerGB2018"
   type        = string
+  validation {
+    condition     = can(regex("^(Free|PerNode|Premium|Standard|Standalone|Unlimited|CapacityReservation|PerGB2018)$", var.sku))
+    error_message = "Possible values are `Free`, `PerNode`, `Premium`, `Standard`, `Standalone`, `Unlimited`, `CapacityReservation`, and `PerGB2018` (new SKU as of `2018-04-03`)."
+  }
 }
 
 variable "retention_in_days" {
