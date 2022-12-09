@@ -22,6 +22,11 @@ variable "system_name" {
   type        = string
 }
 
+variable "system_short_name" {
+  description = "(Required) The short name."
+  type        = string
+}
+
 variable "override_name" {
   description = "(Optional) Override the name of the resource. Under normal circumstances, it should not be used."
   default     = null
