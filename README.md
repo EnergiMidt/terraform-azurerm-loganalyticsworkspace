@@ -61,6 +61,7 @@ No modules.
 | <a name="input_retention_in_days"></a> [retention\_in\_days](#input\_retention\_in\_days) | (Optional) The workspace data retention in days. Possible values are either `7` (Free Tier only) or range between `30` and `730`. | `number` | `30` | no |
 | <a name="input_sku"></a> [sku](#input\_sku) | (Optional) Specifies the SKU of the Log Analytics Workspace. Possible values are `Free`, `PerNode`, `Premium`, `Standard`, `Standalone`, `Unlimited`, `CapacityReservation`, and `PerGB2018` (new SKU as of `2018-04-03`). Defaults to `PerGB2018`. Note that the `Free` SKU has a default `daily_quota_gb` value of `0.5 `(GB). | `string` | `"PerGB2018"` | no |
 | <a name="input_system_name"></a> [system\_name](#input\_system\_name) | (Required) The systen name which should be used for this resource. Changing this forces a new resource to be created. | `string` | n/a | yes |
+| <a name="input_system_short_name"></a> [system\_short\_name](#input\_system\_short\_name) | (Required) The short name. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | (Optional) A mapping of tags to assign to the resource. | `map(string)` | `{}` | no |
 
 ## Outputs
